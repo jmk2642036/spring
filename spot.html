@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>명소 상세</title>
+    <meta name="description" content="서울 벚꽃 명소 상세페이지" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#content">본문으로 바로가기</a>
+
+    <header class="header header--detail">
+      <div class="container">
+        <div class="detailTop">
+          <a class="backLink" href="./index.html" aria-label="메인페이지로 돌아가기">← 메인으로</a>
+          <div>
+            <p class="badge">상세페이지</p>
+            <h1 class="title" id="spotTitle">로딩 중…</h1>
+            <p class="subtitle" id="spotTag"></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section section--detail" aria-label="명소 상세 정보">
+        <div class="container">
+          <article class="detailCard">
+            <div class="detailHero" aria-label="상단 사진">
+              <img id="spotImage" alt="" />
+            </div>
+            <div class="detailBody" aria-label="하단 정보">
+              <p class="detailDesc" id="spotDesc"></p>
+
+              <div id="detailFacts" class="detailFacts" hidden></div>
+
+              <div class="detailGrid">
+                <div class="detailItem">
+                  <div class="detailLabel">카테고리</div>
+                  <div class="detailValue" id="spotTagValue">-</div>
+                </div>
+                <div class="detailItem">
+                  <div class="detailLabel">좌표</div>
+                  <div class="detailValue" id="spotCoords">-</div>
+                </div>
+              </div>
+
+              <div class="detailTips">
+                <h2 class="section__title" style="font-size: 16px; margin-top: 18px;">방문 팁</h2>
+                <div class="spot__meta" id="spotTips"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© 서울 벚꽃 명소 지도</p>
+      </div>
+    </footer>
+
+    <script src="./spots-data.js"></script>
+    <script src="./spot.js"></script>
+  </body>
+</html>
+

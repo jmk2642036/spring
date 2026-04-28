@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서울 벚꽃 명소 지도</title>
+    <meta
+      name="description"
+      content="서울 대표 벚꽃 명소를 한눈에. 경복궁, 남산타워, 여의도, 어린이대공원, 서울숲, 잠실 석촌호수를 지도 마커로 확인하세요."
+    />
+
+    <!-- Leaflet (OpenStreetMap) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#map">지도로 바로가기</a>
+
+    <header class="header">
+      <div class="container">
+        <div class="header__grid">
+          <div>
+            <p class="badge">2026 서울 봄</p>
+            <h1 class="title">서울 대표 벚꽃 명소</h1>
+            <p class="subtitle">
+              메인페이지 중앙 지도에서 6곳을 마커로 확인하고, 아래에서 간단한
+              방문 팁도 확인해보세요.
+            </p>
+
+            <div class="chips" aria-label="표시되는 장소">
+              <span class="chip">경복궁</span>
+              <span class="chip">남산타워</span>
+              <span class="chip">여의도</span>
+              <span class="chip">어린이대공원</span>
+              <span class="chip">서울숲</span>
+              <span class="chip">잠실 석촌호수</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Map section (middle of the main page) -->
+      <section class="section section--map" aria-label="서울 지도와 벚꽃 명소 마커">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">지도에서 한눈에 보기</h2>
+            <p class="section__desc">
+              서울 중심으로 맞춰진 지도를 기준으로, 아래 6곳을 마커로 표시했어요.
+            </p>
+          </div>
+
+          <div class="mapShell">
+            <div id="map" class="map" role="application" aria-label="서울 벚꽃 명소 지도"></div>
+            <div class="mapLegend" aria-label="지도 범례">
+              <div class="mapLegend__title">표시된 명소</div>
+              <ol id="legend" class="mapLegend__list"></ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="서울 벚꽃 명소 소개">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">대표 명소 추천 포인트</h2>
+            <p class="section__desc">
+              첫 방문이라면 아래 포인트 위주로 동선을 잡아보세요.
+            </p>
+          </div>
+
+          <div class="grid" id="spots" aria-label="명소 카드 목록"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">
+          © 서울 벚꽃 명소 지도 · 제작: 로컬 정적 페이지
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./spots-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
