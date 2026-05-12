@@ -18,12 +18,9 @@ function initMap() {
     scrollWheelZoom: true,
   }).setView([37.5665, 126.978], 12);
 
-  // Use a widely-allowed OSM-based tileset to avoid "Referer required" blocks.
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-    subdomains: "abcd",
-    maxZoom: 20,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
 
   const bounds = L.latLngBounds([]);
@@ -46,10 +43,10 @@ function initMap() {
         <div style="font-weight: 800; margin-bottom: 4px;">${escapeHtml(
           spot.name
         )}</div>
-        <div style="color: rgba(255,255,255,0.78); font-size: 13px; line-height: 1.45;">
+        <div style="color: rgba(36,18,28,0.78); font-size: 13px; line-height: 1.45;">
           ${escapeHtml(spot.desc)}
         </div>
-        <div style="margin-top: 8px; font-size: 12.5px; color: rgba(255,255,255,0.78);">
+        <div style="margin-top: 8px; font-size: 12.5px; color: rgba(36,18,28,0.74);">
           좌표: ${spot.lat.toFixed(5)}, ${spot.lng.toFixed(5)}
         </div>
       </div>

@@ -45,7 +45,7 @@ function main() {
   document.title = `${spot.name} 상세`;
   setText("spotTitle", spot.name);
   setText("spotTag", spot.tag);
-  setText("spotDesc", spot.desc);
+  setText("spotDesc", spot.longDesc || spot.desc);
   setText("spotTagValue", spot.tag);
   setText("spotCoords", `${spot.lat.toFixed(5)}, ${spot.lng.toFixed(5)}`);
 
